@@ -8,7 +8,13 @@
 </head>
 
 <body>
+    <div id="compSpeak"> Can you beat me? </div>
+    <button id="rock"> Rock </button>
+    <button id="paper"> Paper </button>
+    <button id="scissors"> Scissors </button>
+    <div id="score"></div>
     <script>
+        
         let humanScore = 0;
         let computerScore = 0;
 
@@ -37,7 +43,8 @@
             }
         }
 
-        function playRound(humanChoice, computerChoice) {
+        function playRound(humanChoice) {
+            let computerChoice = getComputerChoice();
             console.log("Computer throws: " + computerChoice);
             console.log("Player throws: " + humanChoice);
 
@@ -66,26 +73,19 @@
             console.log("Player: " + humanScore + " Computer: " + computerScore);
         }
 
-        /* This game is setup to be a best of 5;
-         when ties are determined, they do not count to
-         the overall number of rounds. */
-        function playGame() {
-            while (humanScore < 3 && computerScore < 3) {
-                let humanSelection = getHumanChoice();
-                let computerSelection = getComputerChoice();
+        let compSpeak = document.querySelector('#compSpeak');
+        let score = document.querySelector('#score')
+        score.textContent = "Player: 0 Computer: 0";
 
-                playRound(humanSelection, computerSelection)
-            }
+        let rockBtn = document.querySelector('#rock');
+        let paperBtn = document.querySelector('#paper');
+        let scissorsBtn = document.querySelector('#scissors');
 
-            if (humanScore == 3) {
-                alert("You win! 3 to 2.")
-            } else if (computerScore == 3) {
-                alert("Computer wins! 3 to 2.")
-            }
-        }
-
+        rockBtn.addEventListener('click', () => playRound('rock'));
+        paperBtn.addEventListener('click', () => playRound('paper'));
+        scissorsBtn.addEventListener('click', () => playRound('scissors'));
+        
         console.log("Can you beat me?");
-        playGame();
 
     </script>
 </body>
