@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexItem {
+    display: flex;
+    margin: 20px;
+}
+
+#compSpeak {
+    font-size: 64px;
+}
+
+button {
+    font-size: 24px;
+}
+
+#rock, #paper, #scissors {
+    margin: 0px 10px;
+}
+
+#score {
+    font-size: 24px;
+}
