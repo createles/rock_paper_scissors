@@ -11,6 +11,7 @@
 <body>
     <div class="flexBox">
         <div class ="flexItem" id="compSpeak"> Can you beat me? </div>
+        <div class ="flexItem" id="sub"> Race to 5. </div>
         <div class="flexItem">
             <button id="rock"> Rock </button>
             <button id="paper"> Paper </button>
@@ -95,17 +96,20 @@
                 rockBtn.remove();
                 paperBtn.remove();
                 scissorsBtn.remove();
+                subText.remove();
             } else if (computerScore === 5) {
                 alert(`Computer wins! ${computerScore} to ${humanScore}`);
                 compSpeak.textContent = "I am your supreme AI overlord."
                 rockBtn.remove();
                 paperBtn.remove();
                 scissorsBtn.remove();
+                subText.remove();
             }
         }
 
         let compSpeak = document.querySelector('#compSpeak');
-        let score = document.querySelector('#score')
+        let score = document.querySelector('#score');
+        let subText = document.querySelector('#sub');
 
         updateScore();
         
